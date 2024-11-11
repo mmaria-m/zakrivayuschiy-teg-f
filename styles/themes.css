@@ -4,3 +4,37 @@
 ✦ theme-light — класс светлой темы
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
+.theme-dark {
+    --main-font: "Inter";
+    --accent-font: "PressStart2P";
+    --main-text-weight: 465;
+    --title-weight: 785;
+    --background-color: #000000;
+    --text-color: #00CC14;
+    --background-image: repeating-linear-gradient(to right, #000, transparent 2px), repeating-linear-gradient(to bottom, #000, transparent 2px), repeating-linear-gradient(to bottom, #007f0c, #004306);
+}
+
+.theme-light {
+    --main-font: "Inter";
+    --accent-font: "PressStart2P";
+    --main-text-weight: 400;
+    --title-weight: 700;
+    --background-color: #FFFFFF;
+    --text-color: #000000;
+    --background-image: repeating-linear-gradient(to right, #d3d3d3, transparent 2px), repeating-linear-gradient(to bottom, #d3d3d3, transparent 2px), repeating-linear-gradient(to bottom, #e7e7e7, #1a1a1a);
+}
+/* надо или нет */
+
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --main-font: "Inter";
+        --accent-font: "PressStart2P";
+        --main-text-weight: 465;
+        --title-weight: 785;
+        --background-color: #000000;
+        --text-color: #00CC14;
+        --background-image: repeating-linear-gradient(to right, #000, transparent 2px), repeating-linear-gradient(to bottom, #000, transparent 2px), repeating-linear-gradient(to bottom, #007f0c, #004306);
+    }
+}
+
