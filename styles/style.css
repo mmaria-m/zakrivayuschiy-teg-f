@@ -15,119 +15,242 @@
 */
 
 .page {
-  min-inline-size: 320px;
-  min-block-size: 100dvb;
-  font-family: var(--main-font, "Inter"), sans-serif;
-  font-variation-settings: "wght" var(--main-text-weight);
-  /* background-color: var(--background-color); */
-  color: var(--text-color);
-  background: var(--background-image);
-  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 6.25rem clamp(0rem, -8.1426rem + 34.7418vw, 23.125rem) clamp(6.25rem, 6.184rem + 0.2817vw, 6.4375rem);
+  color: var(--accent-color);
+  font-family: var(--main-font, "Inter"), sans-serif;
+  background-image: var(--background-image);
+  background-size: cover;
+  background-attachment: fixed;
+  min-inline-size: 320px;
+  min-block-size: 100dvb;
+  font-variation-settings: "wght" var(--main-text-weight);
 }
 
 .header,
-.content {
+.card {
+  border: 2px solid var(--accent-color);
   inline-size: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
-  border: 2px solid var(--text-color);
 }
 
 .header {
-  padding: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem) clamp(0.875rem, -1.4688rem + 10vw, 7.53125rem) 1.6rem;
-  text-transform: uppercase;
-  font-family: var(--accent-font, "PressStart2P"), sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--background-color);
   margin-block-end: 6.25rem;
+  padding: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem) clamp(0.875rem, -1.4688rem + 10vw, 7.53125rem) 1.6rem;
+  font-family: var(--accent-font, "PressStart2P"), sans-serif;
+  text-transform: uppercase;
+  background-color: var(--background-color);
 }
 
 .header__logo {
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  text-decoration: none;
+  list-style: none;
 }
 
 .header__title {
-  /* text-align: center; */
-  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
-  /* padding-block-start: ; */
   padding-block: 1.25rem 1.563rem;
-  
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 }
 
 .theme-menu__list {
   display: flex;
   flex-direction: column;
   gap: 0.875rem;
+  padding-inline-start: 1.125rem;
 }
 
 .theme-menu__button {
   border: none;
-  background: inherit;
+  padding: 0;
   font-size: 0.875rem;
   text-transform: uppercase;
-  padding: 0;
+  background: inherit;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.theme-menu__button:focus {
+  outline: none;
+  opacity: 60%;
+}
+
+.theme-menu__button:hover {
+  opacity: 60%;
+  cursor: pointer;
+}
+
+.theme-menu__button::after {
+  content: "";
+  display: block;
+  inline-size: 100%;
+  block-size: 0.125rem;
+  background-color: var(--accent-color);
+  transition: 0.3s ease;
+  transform: scale(0);
+  transform-origin: left;
+}
+
+.theme-menu__button:focus-visible::after {
+  transform: scale(1);
 }
 
 .theme-menu__button:disabled {
-  opacity: 60%;
   position: relative;
+  opacity: 60%;
+  pointer-events: none;
 }
 
 .theme-menu__button:disabled::before {
   content: "▶";
   position: absolute;
-  inset-inline-start: -1.125rem;
+  animation: moving 0.5s ease-in-out alternate infinite;
+  inset-inline-start: -20px;
 }
 
-.theme-menu__button:hover {
-  cursor: pointer;
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 3.125rem;
 }
 
 .card {
-  background-color: var(--background-color);
-  padding: 0 1.563rem 1.563rem;
   display: flex;
   flex-direction: column;
+  background-color: var(--background-color);
+}
+
+.card__image-wrapper {
+  position: relative;
 }
 
 .card__title {
+  border-block-end: 2px solid var(--accent-color);
+  padding: 0.188rem 0 0.188rem 0.625rem;
   font-size: 1.125rem;
   font-variation-settings: "wght" var(--title-weight);
-  border-block-end: 2px solid var(--text-color);
-  margin: 0 -1.563rem;
-  padding: 0.188rem 0 0.188rem 0.625rem;
+}
+
+.card__image {
+  display: flex;
+  inline-size: 100%;
+  object-fit: cover;
+}
+
+.card__label {
+  position: absolute;
+  opacity: 50%;
+  font-family: var(--accent-font), sans-serif;
+  text-shadow: 
+  1px 0 var(--background-color),
+  -1px 0 var(--background-color),
+  0 1px var(--background-color),
+  0 -1px var(--background-color);
+  inset-inline-end: clamp(0.6875rem, 0.3794rem + 1.3146vw, 1.5625rem);
+  inset-block-start: clamp(1.4375rem, 1.3935rem + 0.1878vw, 1.5625rem);
+  mix-blend-mode: hard-light;
+}
+
+@supports ((text-stroke: 1px var(--background-color)) or (-webkit-text-stroke: 1px var(--background-color))) {
+  .card__label {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--background-color);
+    text-stroke: 1px var(--background-color);
+  }
 }
 
 .card__description {
-  padding: clamp(1.5625rem, 1.5185rem + 0.1878vw, 1.6875rem) 0 1.563rem;
   display: flex;
   flex-direction: column;
   gap: 1.688rem;
-  /* font-variation-settings: "wght" var(--main-text-weight); */
+  border-block-start: 2px solid var(--accent-color);
+  padding: clamp(1.5625rem, 1.5185rem + 0.1878vw, 1.6875rem) 1.563rem 1.563rem;
   font-size: 1.125rem;
-  border-block-start: 2px solid var(--text-color);
-  margin: 0 -1.563rem;
-  padding-inline: 1.563rem;
 }
 
 .card__buttons {
-  align-self: flex-end;
   display: flex;
   gap: 0.75rem;
+  align-self: flex-end;
+  padding: 0 1.563rem 1.563rem;
+}
+
+.button {
+  position: relative;
+  border: 2px solid var(--accent-color);
+  font-family: var(--accent-font, "PressStart2P"), sans-serif;
+  font-size: 0.875rem;
+  background-color: var(--background-color);
+  transition: box-shadow 0.3s ease;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  background-color: var(--accent-color);
+  transition: 0.5s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button:focus,
+.card__icon-button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.card__icon-button {
+  border: none;
+  background-color: inherit;
+  border: 2px solid transparent;
+}
+
+/* .sparks {
+  opacity: 0;
+} */
+
+.card__icon-button:hover {
+  cursor: pointer;
+}
+
+.card__icon-button:focus-visible {
+  border-color: var(--accent-color);
+  transition: border-color 0.3s ease;
 }
 
 .card__like-button {
-  font-family: var(--accent-font, "PressStart2P"), sans-serif;
-  font-size: 0.875rem;
-  background-color: inherit;
-  border: 2px solid var(--text-color);
-  padding: 0.781rem 2.313rem;
-  
+  padding: 0.781rem 2.313rem; 
 }
+
+.button__text {
+  mix-blend-mode: difference;
+  color: var(--button-text-color);
+}
+
+.save-button {
+  align-self: center;
+  padding: clamp(0.9375rem, 0.8605rem + 0.3286vw, 1.15625rem) clamp(1.25rem, 1.228rem + 0.0939vw, 1.3125rem);
+}
+
+
 
 @media (width <= 375px) {
 

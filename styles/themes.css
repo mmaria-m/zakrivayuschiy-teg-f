@@ -10,8 +10,11 @@
     --main-text-weight: 465;
     --title-weight: 785;
     --background-color: #000000;
-    --text-color: #00CC14;
-    --background-image: repeating-linear-gradient(to right, #000, transparent 2px), repeating-linear-gradient(to bottom, #000, transparent 2px), repeating-linear-gradient(to bottom, #007f0c, #004306);
+    --accent-color: #00CC14;
+    --background-image: repeating-linear-gradient(to right, #000, #000 2px, transparent 2px, transparent 4px), repeating-linear-gradient(to bottom, #000, #000 2px, transparent 2px, transparent 4px), linear-gradient(to bottom, #007f0c 0.01%, #004306 100%);
+    --button-text-color: #00CC14;
+    --heart-contour-color: #00CC14;
+    --heart-fill-color: #FF0000;
 }
 
 .theme-light {
@@ -20,8 +23,11 @@
     --main-text-weight: 400;
     --title-weight: 700;
     --background-color: #FFFFFF;
-    --text-color: #000000;
-    --background-image: repeating-linear-gradient(to right, #d3d3d3, transparent 2px), repeating-linear-gradient(to bottom, #d3d3d3, transparent 2px), repeating-linear-gradient(to bottom, #e7e7e7, #1a1a1a);
+    --accent-color: #000000;
+    --background-image: repeating-linear-gradient(to right, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px), repeating-linear-gradient(to bottom, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px), linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
+    --button-text-color: #FFFFFF;
+    --heart-contour-color: #000000;
+    --heart-fill-color: #FF0000;
 }
 /* надо или нет */
 
@@ -33,8 +39,11 @@
         --main-text-weight: 465;
         --title-weight: 785;
         --background-color: #000000;
-        --text-color: #00CC14;
-        --background-image: repeating-linear-gradient(to right, #000, transparent 2px), repeating-linear-gradient(to bottom, #000, transparent 2px), repeating-linear-gradient(to bottom, #007f0c, #004306);
+        --accent-color: #00CC14;
+        --background-image: repeating-linear-gradient(to right, #000, #000 2px, transparent 2px, transparent 4px), repeating-linear-gradient(to bottom, #000, #000 2px, transparent 2px, transparent 4px), linear-gradient(to bottom, #007f0c 0.01%, #004306 100%);
+        --button-text-color: #00CC14;
+        --heart-contour-color: #00CC14;
+        --heart-fill-color: #FF0000;
     }
 }
 

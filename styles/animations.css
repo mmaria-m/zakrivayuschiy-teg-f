@@ -12,3 +12,90 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+@keyframes moving {
+    0% {
+      inset-inline-start: -24px;
+    }
+
+    100% {
+      inset-inline-start: -20px;
+    }
+  }
+
+.card__icon-button:hover .main-body{
+    fill: var(--heart-contour-color);
+    transition: fill 0.3s 0.05s linear;
+}
+
+.main-body {
+    transition: fill 0.3s linear;
+}
+ 
+.card__icon-button:hover .core{
+    fill: var(--heart-contour-color);
+    transition: fill 0.3s linear;
+}
+
+.core {
+    transition: fill 0.3s 0.03s linear;
+}
+  
+.card__icon-button:active .main-body {
+    fill: var(--heart-fill-color);
+    transition: fill 0.3s 0.05s linear;
+} 
+
+.card__icon-button:active .core{
+    fill: var(--heart-fill-color);
+    transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .heart {
+    transform-origin: center;
+    animation: heart-scale 0.3s 0.1s ease-in alternate;
+}
+
+.like-icon.is-liked .core {
+    fill: var(--heart-fill-color);
+    transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .main-body {
+    fill: var(--heart-fill-color);
+    transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon.is-liked .contour {
+    fill: var(--heart-fill-color);
+    transition: fill 0.3s 0.06s linear;
+}
+
+.like-icon.is-liked .sparks {
+    transform-origin: center;
+    animation: sparks-appearing 0.3s 0.3s ease-in alternate;
+}
+
+.contour {
+    transition: fill 0.1s linear;
+}
+
+@keyframes heart-scale {
+    0% {
+        transform: scale(1);
+    }
+    
+    100% {
+        transform: scale(1.5);
+    }
+}
+
+@keyframes sparks-appearing {
+    0% {
+        fill: transparent;
+    }
+  
+    100% {
+        fill: var(--heart-fill-color);
+    }
+}
