@@ -138,6 +138,7 @@
 .card__image {
   display: flex;
   inline-size: 100%;
+  block-size: clamp(23.1875rem, 16.0352rem + 30.5164vw, 43.5rem);
   object-fit: cover;
 }
 
@@ -174,9 +175,9 @@
 
 .card__buttons {
   display: flex;
-  gap: 0.75rem;
   align-self: flex-end;
   padding: 0 1.563rem 1.563rem;
+  gap: 0.75rem;
 }
 
 .button {
@@ -221,11 +222,12 @@
   border: none;
   background-color: inherit;
   border: 2px solid transparent;
+  padding: 0;
 }
 
-/* .sparks {
+.sparks {
   opacity: 0;
-} */
+}
 
 .card__icon-button:hover {
   cursor: pointer;
@@ -237,21 +239,113 @@
 }
 
 .card__like-button {
-  padding: 0.781rem 2.313rem; 
+  padding: 0.781rem 0;
+  inline-size: 8.125rem; 
+}
+
+.like-icon {
+  inline-size: 39px;
+  block-size: 36px;
 }
 
 .button__text {
   mix-blend-mode: difference;
   color: var(--button-text-color);
+  line-height: 90%;
 }
 
 .save-button {
   align-self: center;
   padding: clamp(0.9375rem, 0.8605rem + 0.3286vw, 1.15625rem) clamp(1.25rem, 1.228rem + 0.0939vw, 1.3125rem);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  /* box-sizing: border-box; */
 }
+
+.floppy-disk {
+  /* width: 21px;
+  height: 21px; */
+  /* position: relative; */
+  /* z-index: 1; */
+  /* color: red; */
+  /* mix-blend-mode: difference; */
+  /* display: flex; */
+}
+
+.dialog__icon {
+  width: 39px;
+  height: 39px;
+  flex: none;
+}
+
+
+.floppy__icon {
+  color: var(--button-text-color, #ffffff);
+  mix-blend-mode: difference;
+}
+
+.save-button .floppy__icon {
+  block-size: 21px;
+  inline-size: 21px;
+}
+
+/* шаг 12 */
+
+.pop-up {
+  /* background: var(--background-color); */
+  inline-size: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
+  padding: 1.875rem;
+  /* проблема с паддингами */
+  position: fixed;
+  background-color: var(--background-color);
+}
+
+.pop-up[open] {
+  display: flex;
+  flex-direction: column;
+  gap: 1.875rem;
+}
+
+.pop-up::backdrop {
+  background: rgb(0 0 0 / 0.75);
+}
+
+.pop-up__title-wrapper {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  gap: 20px;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.pop-up__title-wrapper .floppy-disk {
+  inline-size: 2.438rem;
+  block-size: 2.438rem;
+}
+
+.pop-up__title {
+  font-family: var(--accent-font), sans-serif;
+  font-size: 14px;
+  line-height: 150%;
+  color: var(--accent-color);
+}
+
+.pop-up__button {
+  /* margin-block-start: ; */
+  padding: 0.781rem 0;
+  align-self: center;
+  inline-size: 100%;
+
+}
+
+/* шаг 12 */
+
 
 
 
 @media (width <= 375px) {
 
 }
+
+

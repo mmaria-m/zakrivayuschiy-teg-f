@@ -72,7 +72,6 @@
 }
 
 .like-icon.is-liked .sparks {
-    transform-origin: center;
     animation: sparks-appearing 0.3s 0.3s ease-in alternate;
 }
 
@@ -92,10 +91,10 @@
 
 @keyframes sparks-appearing {
     0% {
-        fill: transparent;
+        opacity: 0;
     }
   
     100% {
-        fill: var(--heart-fill-color);
+        opacity: 1;
     }
 }
