@@ -135,7 +135,7 @@
   padding: 0.219rem 0.625rem 0.219rem 0.625rem;
   font-size: 1.125rem;
   font-variation-settings: "wght" var(--title-weight);
-  line-height: auto;
+  /* line-height: auto; */
 }
 
 .card__image {
@@ -231,6 +231,8 @@
   border: 2px solid transparent;
   padding: 0;
   background-color: inherit;
+  display: flex;
+  /* align-self: center; */
 }
 
 .sparks {
@@ -353,11 +355,45 @@
 
 /* шаг 12 */
 
-
-
-
-@media (width <= 375px) {
-
+.image_blank-sheet {
+  filter: brightness(150%);
 }
 
+.image_fear {
+  filter: hue-rotate(9deg) saturate(120%);
+}
 
+.image_perfection {
+  filter: invert(20%);
+}
+
+.image_support {
+  filter: blur(5px);
+}
+
+.image_turning-point {
+  filter: brightness(100%) saturate(90%);
+}
+
+.image_dissapointment {
+  filter: grayscale(80%) blur(3px);
+}
+
+.image_you-are-here {
+  filter: hue-rotate(310deg) brightness(70%);
+  
+}
+
+@media (width <= 375px) {
+  .save-button {
+    flex-direction: column;
+  }
+
+  .save-button .floppy__icon {
+    inline-size: 28px;
+  }
+
+  .card__title {
+    padding: 0.281rem 0.625rem 0.281rem 0.625rem;
+  }
+}
