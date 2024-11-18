@@ -4,7 +4,7 @@
 ✦ theme-light — класс светлой темы
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
-.theme-dark {
+:root.theme-dark {
     --main-font: "Inter";
     --accent-font: "PressStart2P";
     --main-text-weight: 465;
@@ -17,7 +17,7 @@
     --heart-fill-color: #FF0000;
 }
 
-.theme-light {
+:root.theme-light {
     --main-font: "Inter";
     --accent-font: "PressStart2P";
     --main-text-weight: 400;
@@ -29,7 +29,6 @@
     --heart-contour-color: #000000;
     --heart-fill-color: #FF0000;
 }
-/* надо или нет */
 
 
 @media (prefers-color-scheme: dark) {
