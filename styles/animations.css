@@ -1,9 +1,9 @@
-.card__icon-button:hover .main-body{
+.card__icon-button:hover .main-body {
     fill: var(--heart-contour-color);
     transition: fill 0.3s 0.05s linear;
 }
 
-.card__icon-button:hover .core{
+.card__icon-button:hover .core {
     fill: var(--heart-contour-color);
     transition: fill 0.3s linear;
 }
