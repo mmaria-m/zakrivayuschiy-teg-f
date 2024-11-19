@@ -5,8 +5,6 @@
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
 :root.theme-dark {
-    --main-font: "Inter";
-    --accent-font: "PressStart2P";
     --main-text-weight: 465;
     --title-weight: 785;
     --background-color: #000000;
@@ -18,8 +16,6 @@
 }
 
 :root.theme-light {
-    --main-font: "Inter";
-    --accent-font: "PressStart2P";
     --main-text-weight: 400;
     --title-weight: 700;
     --background-color: #FFFFFF;
@@ -33,8 +29,6 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --main-font: "Inter";
-        --accent-font: "PressStart2P";
         --main-text-weight: 465;
         --title-weight: 785;
         --background-color: #000000;
